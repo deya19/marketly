@@ -1,0 +1,19 @@
+import openAiWorker, { type OpenAIEnv } from "./openai-api-worker.js";
+
+export default {
+  fetch(request, env) {
+    const url = new URL(request.url);
+
+    if (url.pathname === "/api/openai") {
+      return openAiWorker.fetch(request, env as OpenAIEnv);
+    }
+
+    if (url.pathname.startsWith("/api/")) {
+      return Response.json({
+        name: "Cloudflare",
+      });
+    }
+
+    return new Response(null, { status: 404 });
+  },
+} satisfies ExportedHandler<Env>;

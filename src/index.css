@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #1d1d1b;
+  background: #f4f3ee;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --ink: #1d1d1b;
+  --muted: #77766f;
+  --line: #d9d7ce;
+  --paper: #fbfaf6;
+  --input-bg: #fff;
+  --button-bg: #1d1d1b;
+  --button-text: #fff;
+  --button-hover: #45453f;
+  --button-icon: #d7f36b;
+  --accent: #d7f36b;
+  --accent-dark: #617119;
+  --mono: 'DM Mono', monospace;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+:root[data-theme='dark'] {
+  color: #f2f1eb;
+  background: #151613;
+  --ink: #f2f1eb;
+  --muted: #aaa99f;
+  --line: #3a3b35;
+  --paper: #20211d;
+  --input-bg: #171814;
+  --button-bg: #d7f36b;
+  --button-text: #151613;
+  --button-hover: #e6fb8f;
+  --button-icon: #151613;
+  --accent: #d7f36b;
+  --accent-dark: #c2dc5d;
+}
+
+* { box-sizing: border-box; }
+
+body { background: #f4f3ee; margin: 0; min-width: 320px; transition: background-color .25s ease; }
+
+:root[data-theme='dark'] body { background: #151613; }
+
+button, textarea, input { font: inherit; }
+
+button { cursor: pointer; }
+
+#root { min-height: 100vh; }
